@@ -48,6 +48,25 @@
   - `filterTransactionByCategory(String category)`: Filter transactions by category.
   - `comparePreviousMonthSpending()`: Compare total spending of the current month with the previous month and identify unusual spends.
 
+### ExtraPayUsers:
+- States:
+  - `userId`: Id of user who is doing extra spent.
+  - `category`: On which category they spent.
+  - `moreSpentAmount`: How much extra they are paying.
+- Behaviour:
+  - `getUserId()`: Retrieve Id Of user.
+  - `getCategory()`: Retrieve category.
+  - `getMoreSpentAmount()`: get Amount Of extra spent.
+
+### UserHandler:
+- States:
+  - `users`: List of users.
+- Behaviour:
+  - `addUser(User user)`: Add a new user.
+  - `getUserByUserId(int userId)`: Retrieve data of a specific user.
+
+
+
 ### SendEmail:
 - Behaviour:
   - `sendEmail(String subject, String body, String userEmail)`: Send mail to the user.

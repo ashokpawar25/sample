@@ -45,29 +45,29 @@
   - `addTransaction(Transaction transaction)`: Add a new transaction to the transaction history.
   - `getAllTransactions()`: Retrieve the list of transactions.
   - `filterTransactionByCurrentMonth()`: Filter transactions for current month.
-  - - `filterTransactionByPreviousMonth()`:Filter transactions for previous month.
+  - `filterTransactionByPreviousMonth()`:Filter transactions for previous month.
   - `filterTransactionByCatgory(String catogory)`: Filter transactions by category.
   - `ComparePreviouMonthSpending()`: Compare total spending of the current month with the previous month.
 
 ### ExtraPayUsers:
 -States:
-  -`userId`: Id of user who is doing extra spent.
-  -`category`: On which category they spent.
-  -`moreSpentAmount`: How much extra they are paying.
+ -`userId`: Id of user who is doing extra spent.
+ -`category`: On which category they spent.
+ -`moreSpentAmount`: How much extra they are paying.
 
- -Behaviour:
-   -`getUserId()`: Retrieve Id Of user.
-   -`getCategory()`: Retrieve category.
-   -`getMoreSpentAmount()`: get Amount Of extra spent.
+-Behaviour:
+  -`getUserId()`: Retrieve Id Of user.
+  -`getCategory()`: Retrieve category.
+  -`getMoreSpentAmount()`: get Amount Of extra spent.
 
 
 ### UserHandler:
- -States:
-   -`List<User>`: To sotre the information of user.
+-States:
+  -`List<User>`: To sotre the information of user.
 
- -Behaviour:
-  -`addUser(User user)`: Add new user.
-  -`getUserByUserId(int userId1)`: Retrieve data of specific user
+-Behaviour:
+ -`addUser(User user)`: Add new user.
+ -`getUserByUserId(int userId1)`: Retrieve data of specific user
   
 
 ### SendEmail:

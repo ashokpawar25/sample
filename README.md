@@ -9,23 +9,29 @@
 
 ## Classes and Variables
 
-### CardUser:
-- Variables:
-  - `userId`: Unique id of user.
-  - `name`: Name of the credit card user.
-  - `email`: Email address of the credit card user.
-- Methods:
-  - `get_name()`: Retrieve the name of the credit card user.
-  - `get_email()`: Retrieve the email address of the credit card user.
+### User:
+- States:
+  - `userId`:Unique id of user.
+  - `name`:Name of the credit card user.
+  - `email`:Email address of the credit card user.
+- Constructor:
+  -`User(int userId, String name, String email)`
+
+- Behaviour:
+  - `getUserId`: Retrieve the user id of user.
+  - `getName()`: Retrieve the name of user.
+  - `getEmail()`: Retrieve the email address of user.
 
 ### Transaction:
-- Variables:
+- States:
   - `transactionId`: Unique Id of Transaction.
   - `category`: Category of the transaction (e.g., groceries, travel).
   - `amount`: Amount of transaction.
   - `date`: Date of the transaction.
   - `userId`: User who did transaction.
-- Methods:
+- Constructor:
+  -`Transaction(int transactionID, String category, int amount, LocalDate transactionDate, int userId)`
+- Behaviour:
   - `getTransactionId`: Retrive transaction id.
   - `getCategory()`: Retrieve the category of the transaction.
   - `getAmount()`: Retrieve the amount spent in the transaction.
@@ -33,19 +39,37 @@
   - `getUserId`: Get the User who did transaction.
 
 ### TransactionHistory:
-- Variables:
+- States:
   - `transactions`: List of transactions made by the user.
-- Methods:
-  - `addTransaction(transaction)`: Add a new transaction to the transaction history.
-  - `getTransactions(transactionId)`: Retrieve the list of transactions.
-  - `filteBbyMonth(month, year)`: Filter transactions by a specific month and year.
-  - `filterByCategory()`: Filter transactions by category.
-  - `calculateSpendingPerCategory()`: Calculate total spending per category.
-  - `comparePreviousMonth()`: Compare total spending of the current month with the previous month.
+- Behaviour:
+  - `addTransaction(Transaction transaction)`: Add a new transaction to the transaction history.
+  - `getAllTransactions()`: Retrieve the list of transactions.
+  - `filterTransactionByCurrentMonth()`: Filter transactions for current month.
+  - - `filterTransactionByPreviousMonth()`:Filter transactions for previous month.
+  - `filterTransactionByCatgory(String catogory)`: Filter transactions by category.
+  - `ComparePreviouMonthSpending()`: Compare total spending of the current month with the previous month.
+
+### ExtraPayUsers:
+-States:
+  -`userId`: Id of user who is doing extra spent.
+  -`category`: On which category they spent.
+  -`moreSpentAmount`: How much extra they are paying.
+
+ -Behaviour:
+   -`getUserId()`: Retrieve Id Of user.
+   -`getCategory()`: Retrieve category.
+   -`getMoreSpentAmount()`: get Amount Of extra spent.
+
+
+### UserHandler:
+ -States:
+   -`List<User>`: To sotre the information of user.
+
+ -Behaviour:
+  -`addUser(User user)`: Add new user.
+  -`getUserByUserId(int userId1)`: Retrieve data of specific user
+  
 
 ### SendEmail:
-- Variables:
-  - `email`: email address to send mail.
-  - `extraSpent`: catrgory wise list of extra spent.
-- Methods:
-  - `sendMail(email,List<extraSpent)`: Send mail to user.
+- Behaviour:
+  - `sendEmail(String subject, String body, String bEmail)`: Send mail to user.
